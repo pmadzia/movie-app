@@ -1,0 +1,38 @@
+code: pl-PL
+label: Polski (Polska)
+faker_locale: pl
+
+title:
+  patterns:
+    - "%{adjective} %{noun}"
+    - "%{noun} i %{other_noun}"
+    - "%{noun}: %{suffix}"
+    - "%{adjective} %{noun} %{suffix}"
+    - "%{other_noun} kontra %{noun}"
+  adjectives:
+    m: [Ostatni, Cichy, Czarny, Szalony, Zakazany, Ukryty, Wieczny]
+    f: [Ostatnia, Cicha, Czarna, Szalona, Zakazana, Ukryta, Wieczna]
+    n: [Ostatnie, Ciche, Czarne, Szalone, Zakazane, Ukryte, Wieczne]
+  nouns:
+    m: [Wilk, Cień, Smok, Zamek, Sen, Bunt, Pościg]
+    f: [Noc, Zemsta, Wyspa, Granica, Burza, Tajemnica, Misja]
+    n: [Miasto, Serce, Światło, Lato, Imperium, Echo, Królestwo]
+  suffixes: [Początek, Powrót, Odrodzenie, Finał, Rewanż, Zemsta]
+
+genres: [Akcja, Komedia, Dramat, Horror, Sci-Fi, Thriller, Romans, Animacja, Fantasy, Dokument, Przygodowy, Kryminał]
+
+reviews:
+  templates:
+    - "Zachwycająca podróż od pierwszej do ostatniej minuty."
+    - "Gdybym mógł to poprosiłbym o zwrot pieniędzy."
+    - "Obsada świetna, ale fabuła jest banalna."
+    - "Pięknie wygląda, ale brakuje w nim duszy."
+    - "Obejrzę jeszcze raz, koniecznie z popcornem."
+    - "Odważny i poruszający film."
+    - "Nie dla wszystkich, ale mi się podobał."
+    - "Sama muzyka warta jest ceny biletu."
+
+trailer:
+  taglines: ["JESIENIĄ W KINACH", "JUŻ WKRÓTCE", "TYLKO W KINACH", "KONIEC OCZEKIWANIA", "NIC JUŻ NIE BĘDZIE TAKIE SAMO"]
+  presented_by: ["FILM", "W REŻYSERII", "OD PRODUCENTÓW"]
+  rating_labels: ["OD LAT 12", "OD LAT 16", "DLA WSZYSTKICH"]

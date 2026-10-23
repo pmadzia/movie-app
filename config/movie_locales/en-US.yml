@@ -1,0 +1,34 @@
+code: en-US
+label: English (USA)
+faker_locale: en
+
+title:
+  patterns:
+    - "%{adjective} %{noun}"
+    - "The %{noun} of %{other_noun}"
+    - "%{noun}: %{suffix}"
+    - "%{adjective} %{noun} %{suffix}"
+    - "%{noun} & %{other_noun}"
+  adjectives:
+    x: [Fast, Silent, Broken, Golden, Last, Electric, Hidden, Crimson, Wild, Forgotten, Frozen, Midnight]
+  nouns:
+    x: [Harbor, Thunder, Empire, Signal, Garden, Shadow, Protocol, Horizon, Mirror, Engine, Frontier, Storm, Kingdom]
+  suffixes: [Rising, Reloaded, Plus, Returns, Origins, Unleashed, Forever, Revenge]
+
+genres: [Action, Comedy, Drama, Horror, Sci-Fi, Thriller, Romance, Animation, Fantasy, Documentary, Adventure, Mystery]
+
+reviews:
+  templates:
+    - "A stunning ride from start to finish."
+    - "If I could I would asked for my money back."
+    - "The cast is great, but the plot is lacking."
+    - "Visually gorgeous and emotionally empty."
+    - "Would watch again, preferably with popcorn."
+    - "A bold, loud and strangely moving experience."
+    - "Not for everyone, but I loved every minute."
+    - "The soundtrack alone is worth the ticket."
+
+trailer:
+  taglines: ["THIS FALL", "COMING SOON", "ONLY IN THEATERS", "THE WAIT IS OVER", "NOTHING WILL BE THE SAME"]
+  presented_by: ["A FILM BY", "DIRECTED BY", "FROM THE PRODUCERS OF"]
+  rating_labels: ["RATED PG-13", "RATED R", "RATED PG"]
