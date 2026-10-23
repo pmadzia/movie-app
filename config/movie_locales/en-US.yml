@@ -17,6 +17,24 @@ title:
 
 genres: [Action, Comedy, Drama, Horror, Sci-Fi, Thriller, Romance, Animation, Fantasy, Documentary, Adventure, Mystery]
 
+description:
+  slots:
+    hero: [a retired detective, a young mechanic, a disgraced pilot, a mother of three, an unlikely duo of strangers, a small-town baker]
+    action: [uncover a hidden truth, outrun the past, save the family business, cross the frontier, stop a dangerous plan]
+    event: [an old secret resurfaces, a storm shuts down the city, a stranger arrives with a warning, the lights go out across town]
+    place: [in a sleepy harbor town, in the neon heart of the city, in a remote mountain village, on an abandoned space station]
+  openings:
+    - "%{place}, %{hero} is forced to %{action} when %{event}."
+    - "When %{event}, %{hero} has no choice but to %{action}."
+    - "%{place}, %{event}, and %{hero} must %{action}."
+  twists:
+    - "Old allies turn into enemies, and nothing is what it seems."
+    - "Every answer leads to a bigger question."
+    - "The closer the truth gets, the higher the price."
+  endings:
+    - "Now there is only one chance to %{action} before it is too late."
+    - "Time is running out, and so is the courage to %{action}."
+
 reviews:
   templates:
     - "A stunning ride from start to finish."
@@ -28,7 +46,9 @@ reviews:
     - "Not for everyone, but I loved every minute."
     - "The soundtrack alone is worth the ticket."
 
+ratings: ["G", "PG", "PG-13", "R", "NC-17"]
+
 trailer:
   taglines: ["THIS FALL", "COMING SOON", "ONLY IN THEATERS", "THE WAIT IS OVER", "NOTHING WILL BE THE SAME"]
   presented_by: ["A FILM BY", "DIRECTED BY", "FROM THE PRODUCERS OF"]
-  rating_labels: ["RATED PG-13", "RATED R", "RATED PG"]
+  rating_format: "RATED %{rating}"

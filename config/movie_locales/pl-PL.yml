@@ -21,6 +21,24 @@ title:
 
 genres: [Akcja, Komedia, Dramat, Horror, Sci-Fi, Thriller, Romans, Animacja, Fantasy, Dokument, Przygodowy, Kryminał]
 
+description:
+  slots:
+    hero: [emerytowany detektyw, młody mechanik, zhańbiony pilot, matka trójki dzieci, nieznajomy kierowca, piekarz z małego miasteczka]
+    action: [odkryć ukrytą prawdę, uciec przed przeszłością, uratować rodzinny interes, przekroczyć granicę, powstrzymać niebezpieczny plan]
+    event: [odżywa stary sekret, burza paraliżuje miasto, nieznajomy przynosi ostrzeżenie, w całym mieście gasną światła]
+    place: [w nadmorskim miasteczku, w sercu nocnego miasta, w odległej górskiej wiosce, na opuszczonej stacji kosmicznej]
+  openings:
+    - "%{place} %{hero} musi %{action}, gdy %{event}."
+    - "Gdy %{event}, %{hero} nie ma wyboru i musi %{action}."
+    - "%{place} %{event}, a %{hero} musi %{action}."
+  twists:
+    - "Dawni sojusznicy stają się wrogami i nic nie jest takie, na jakie wygląda."
+    - "Każda odpowiedź prowadzi do większego pytania."
+    - "Im bliżej prawdy, tym wyższa cena."
+  endings:
+    - "Zostaje już tylko jedna szansa, by %{action}, zanim będzie za późno."
+    - "Czas ucieka, a odwagi, by %{action}, coraz mniej."
+
 reviews:
   templates:
     - "Zachwycająca podróż od pierwszej do ostatniej minuty."
@@ -32,7 +50,9 @@ reviews:
     - "Nie dla wszystkich, ale mi się podobał."
     - "Sama muzyka warta jest ceny biletu."
 
+ratings: ["BO", "7+", "12+", "16+", "18+"]
+
 trailer:
   taglines: ["JESIENIĄ W KINACH", "JUŻ WKRÓTCE", "TYLKO W KINACH", "KONIEC OCZEKIWANIA", "NIC JUŻ NIE BĘDZIE TAKIE SAMO"]
   presented_by: ["FILM", "W REŻYSERII", "OD PRODUCENTÓW"]
-  rating_labels: ["OD LAT 12", "OD LAT 16", "DLA WSZYSTKICH"]
+  rating_format: "Kategoria wiekowa %{rating}"
