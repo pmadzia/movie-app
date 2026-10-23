@@ -10,7 +10,7 @@ class RngStream
   end
 
   def int(range)
-    random.rang(range)
+    random.rand(range)
   end
 
   def pick(items)
