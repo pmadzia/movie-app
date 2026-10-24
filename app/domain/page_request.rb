@@ -5,7 +5,7 @@ class PageRequest
     @seed    = Seed.parse(params[:seed])
     @profile = LocaleDirectory.find(params[:locale])
     @page    = PageNumber.parse(params[:page])
-    @likes   = Average.parse(prarams[:likes])
+    @likes   = Average.parse(params[:likes])
     @reviews = Average.parse(params[:reviews])
   end
 end
