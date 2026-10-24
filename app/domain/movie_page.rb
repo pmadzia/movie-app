@@ -6,7 +6,7 @@ class MoviePage
   def as_json(*)
     {
       page:   @request.page,
-      seed:   @request.seed,
+      seed:   @request.seed.to_s,
       locale: @request.profile.code,
       items:  Array.new(PageLayout::SIZE) { |position| item(position) }
     }
