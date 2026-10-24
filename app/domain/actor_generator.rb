@@ -4,7 +4,7 @@ class ActorGenerator < Generator
   def call(rng)
     count = rng.int(COUNT)
     FakerScope.run(locale: profile.faker_locale, random: rng.random) do
-      Array.new(count) { Faker::Name.name }.uniq
+      Array.new(count) { PersonName.call }.uniq
     end
   end
 end
