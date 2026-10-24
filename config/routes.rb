@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
   root "movies#index"
-  namespace :api, defaults: { format: json } do
+  namespace :api, defaults: { format: :json } do
     resources :movies, only: :index
     resources :locales, only: :index
     get "seeds/random", to: "seeds#random"
