@@ -1,0 +1,16 @@
+en-US:
+  ui:
+    language: Language
+    seed: Seed
+    likes: Likes
+    reviews: Review
+    random_seed: Random seed
+    table_view: Table view
+    gallery_view: Gallery view
+    col_genre: Genre
+    col_title: Title
+    col_cast: Cast
+    col_year: Year
+    cast: Cast
+    director: Director
+    minutes: min

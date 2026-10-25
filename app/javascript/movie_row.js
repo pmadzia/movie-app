@@ -1,8 +1,9 @@
 import { esc } from "./escape"
 
 export class MovieRow {
-  constructor(movie) {
+  constructor(movie, t) {
     this.movie = movie
+    this.t = t
   }
 
   html() {
@@ -37,10 +38,10 @@ export class MovieRow {
   info() {
     const m = this.movie
     return `<h5>${esc(m.title)} <small class="text-muted">${m.year}, ${esc(m.genre)}</small></h5>
-      <p class="mb-1"><span class="badge text-bg-secondary">${m.duration} min</span>
+      <p class="mb-1"><span class="badge text-bg-secondary">${m.duration} ${esc(this.t("minutes"))}</span>
          <span class="badge text-bg-dark">${esc(m.rating)}</span></p>
-      <p class="mb-1"><em>Cast: ${esc(m.actors.join(", "))}</em><br>
-         <em>Director: ${esc(m.director)}</em></p>
+      <p class="mb-1"><em>${esc(this.t("cast"))}: ${esc(m.actors.join(", "))}</em><br>
+         <em>${esc(this.t("director"))}: ${esc(m.director)}</em></p>
       <p class="description">${esc(m.description)}</p>`
   }
 

@@ -1,0 +1,16 @@
+pl-PL:
+  ui:
+    language: Język
+    seed: Seed
+    likes: Polubienia
+    reviews: Recenzje
+    random_seed: Random seed
+    table_view: Widok tabeli
+    gallery_view: Widok galerii
+    col_genre: Gatunek
+    col_title: Tytuł
+    col_cast: Obsada
+    col_year: Rok
+    cast: Obsada
+    director: Reżyser
+    minutes: min

@@ -8,9 +8,9 @@ export class TableView {
     this.table.addEventListener("click", (event) => this.toggle(event))
   }
 
-  render(data) {
+  render(data, t) {
     this.table.querySelectorAll("tbody").forEach((body) => body.remove())
-    this.table.insertAdjacentHTML("beforeend", data.items.map((m) => new MovieRow(m).html()).join(""))
+    this.table.insertAdjacentHTML("beforeend", data.items.map((m) => new MovieRow(m, t).html()).join(""))
     this.pagination.render(data.page)
   }
 

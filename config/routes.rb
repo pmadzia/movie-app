@@ -17,5 +17,6 @@ Rails.application.routes.draw do
     resources :movies, only: :index
     resources :locales, only: :index
     get "seeds/random", to: "seeds#random"
+    get "ui", to: "ui#show"
   end
 end
