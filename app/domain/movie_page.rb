@@ -32,9 +32,11 @@ class MoviePage
 
   def item(position)
     streams = streams_for(position)
-    builder.build(position).to_h.merge(
+    movie   = builder.build(position)
+    movie.to_h.merge(
       likes:   likes.call(streams),
-      reviews: reviews.call(streams).map(&:to_h)
+      reviews: reviews.call(streams).map(&:to_h),
+      trailer: TrailerScript.new(movie, @request.profile, streams.for(:trailer)).call
     )
   end
 end

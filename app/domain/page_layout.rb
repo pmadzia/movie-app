@@ -1,5 +1,5 @@
 module PageLayout
-  SIZE = 10
+  SIZE = 20
 
   def self.index(page, position)
     (page - 1) * SIZE + position + 1

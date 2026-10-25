@@ -7,7 +7,11 @@ export class MovieDetails {
   }
 
   frame() {
-    return `<div class="trailer-frame">${esc(this.movie.title)}</div>`
+    return `<div class="trailer" data-trailer="${this.movie.index}">
+      <div class="trailer-stage"></div>
+      <div class="trailer-caption"><span></span></div>
+      <button type="button" class="trailer-play" aria-label="Play">&#9654;</button>
+    </div>`
   }
 
   likes() {

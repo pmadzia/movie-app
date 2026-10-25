@@ -1,4 +1,6 @@
 import { GalleryCard } from "./gallery_card"
+import { mountTrailers } from "./trailer_mount"
+import { TrailerPlayer } from "./trailer_player"
 
 export class GalleryView {
   constructor(root, onMore) {
@@ -17,9 +19,11 @@ export class GalleryView {
 
   setVisible(on) {
     this.root.hidden = !on
+    on || TrailerPlayer.stopAll()
   }
 
   reset() {
+    TrailerPlayer.stopAll()
     this.grid.innerHTML = ""
     this.busy = true
     window.scrollTo(0, 0)
@@ -27,6 +31,7 @@ export class GalleryView {
 
   render(data, t) {
     this.grid.insertAdjacentHTML("beforeend", data.items.map((m) => new GalleryCard(m, t).html()).join(""))
+    mountTrailers(this.grid, data.items)
     this.busy = false
     this.watch()
   }
@@ -46,7 +51,7 @@ export class GalleryView {
   }
 
   expand(event) {
-    const button = event.target.closest("[data-expand]")
-    button && button.closest(".movie-card").classList.toggle("expanded")
+    const card = event.target.closest(".movie-card")
+    card && card.classList.toggle("expanded")
   }
 }

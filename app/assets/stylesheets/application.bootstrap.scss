@@ -71,17 +71,54 @@ $tb-height: 3.5rem;
 .movie-card.expanded .extra { display: block; }
 .movie-card .chevron { display: inline-block; transition: transform 0.15s; }
 .movie-card.expanded .chevron { transform: rotate(180deg); }
-.movie-card .trailer-frame { max-width: 100%; }
+.movie-card { max-width: 100%; }
 
-.trailer-frame {
+.trailer {
+  position: relative;
+  max-width: 360px;
   aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 0.25rem;
+  background: #000;
+  cursor: pointer;
+}
+.trailer::after { content: ""; position: absolute; inset: 0; pointer-events: none; box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.7); }
+.trailer-stage, .trailer-stage video { position: absolute; inset: 0; width: 100%; height: 100%; }
+.trailer-stage video { object-fit: cover; }
+
+.trailer-caption {
+  white-space: nowrap;
+  overflow: hidden;
+  position: absolute;
+  inset: 0;
+  z-index: 2;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.5rem;
-  background: #111;
-  color: #fff;
-  font-weight: 700;
+  padding: 0 1rem;
   text-align: center;
-  border-radius: 0.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #fff;
+  font: 700 1.3rem/1.2 Impact, "Arial Narrow", sans-serif;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
+  pointer-events: none;
+  opacity: 0;
 }
+.trailer-caption.title { font-size: 2.2rem; }
+.trailer-caption span { display: inline-block; }
+
+.trailer-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 3;
+  transform: translate(-50%, -50%);
+  width: 3rem;
+  height: 3rem;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+.trailer.playing .trailer-play { display: none; }
