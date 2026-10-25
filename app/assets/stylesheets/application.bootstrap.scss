@@ -67,6 +67,12 @@ $tb-height: 3.5rem;
   max-width: 100ch;
 }
 
+.movie-card .extra { display: none; }
+.movie-card.expanded .extra { display: block; }
+.movie-card .chevron { display: inline-block; transition: transform 0.15s; }
+.movie-card.expanded .chevron { transform: rotate(180deg); }
+.movie-card .trailer-frame { max-width: 100%; }
+
 .trailer-frame {
   aspect-ratio: 16 / 9;
   display: flex;

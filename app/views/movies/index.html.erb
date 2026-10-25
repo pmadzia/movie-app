@@ -35,7 +35,7 @@
               data-i18n-title="table_view" title="<%= @ui['table_view'] %>">&#9638;
       </button>
       <button type="button" class="btn btn-outline-primary" data-view="gallery"
-              data-i18n-title="gallery_view" title="<%= @ui['gallery_view'] %>" disabled>&#9636;
+              data-i18n-title="gallery_view" title="<%= @ui['gallery_view'] %>">&#9636;
       </button>
     </div>
   </div>
@@ -52,5 +52,9 @@
       </thead>
     </table>
     <nav id="pagination" aria-label="Pages"></nav>
+  </div>
+  <div id="gallery-view" hidden>
+    <div id="gallery-grid" class="row g-3 align-items-start"></div>
+    <div id="gallery-sentinel" class="py-4"></div>
   </div>
 </div>
