@@ -1,4 +1,4 @@
-module API
+module Api
   class LocalesController < ApplicationController
     def index
       render json: LocaleDirectory.options

@@ -1,1 +1,51 @@
-<h1>Movies#index</h1>
+<div id="app" class="container-fluid px-4 py-4">
+  <div class="toolbar d-flex flex-nowrap align-items-center gap-3 mb-3 overflow-auto">
+
+    <div class="form-floating tb-language">
+      <%= select_tag :locale,
+            options_for_select(@locales.map { |l| [l[:label], l[:code]] }),
+            class: "form-select" %>
+      <label for="locale">Language</label>
+    </div>
+
+    <div class="form-floating tb-seed">
+      <input id="seed" class="form-control" inputmode="numeric" placeholder="Seed" value="<%= @seed %>">
+      <label for="seed">Seed</label>
+      <button id="random-seed" type="button" class="tb-icon-btn"
+        title="Random seed" aria-label="Random seed">&#8644;
+      </button>
+    </div>
+
+    <div class="tb-likes">
+      <label for="likes" class="tb-likes-label">
+        Likes <output id="likes-output">3</output>
+      </label>
+      <input id="likes" type="range" class="form-range" autocomplete="off"
+        min="0" max="10" step="0.1" value="3">
+    </div>
+
+    <div class="form-floating tb-reviews">
+      <input id="reviews" type="number" class="form-control" autocomplete="off"
+        min="0" max="10" step="0.1" placeholder="Review" value="2">
+      <label for="reviews">Review</label>
+    </div>
+    <div class="btn-group tb-view ms-auto" id="view-switch" role="group" aria-label="View">
+      <button type="button" class="btn btn-primary active" data-view="table"
+              title="Table view" aria-label="Table view">&#9638;
+      </button>
+      <button type="button" class="btn btn-outline-primary" data-view="gallery"
+              title="Gallery view" aria-label="Gallery view" disabled>&#9636;
+      </button>
+    </div>
+  </div>
+  <div id="table-view">
+    <table class="table table-hover align-middle">
+      <thead>
+        <tr><th class="text-nowrap">
+          #</th><th>Genre</th><th>Title</th><th>Cast</th><th class="text-end">Year
+        </th></tr>
+      </thead>
+    </table>
+    <nav id="pagination" aria-label="Pages"></nav>
+  </div>
+</div>

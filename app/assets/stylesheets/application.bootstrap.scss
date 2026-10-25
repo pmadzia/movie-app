@@ -1,2 +1,81 @@
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
+
+$tb-height: 3.5rem;
+
+.toolbar .form-control,
+.toolbar .form-select,
+.toolbar .tb-likes {
+  height: $tb-height;
+  border: 1px solid #dee2e6;
+  border-radius: 0.6rem;
+  background-color: #fff;
+}
+
+.toolbar .form-floating > label { color: #6c757d; font-size: 0.85rem; }
+.toolbar .form-control:focus,
+.toolbar .form-select:focus { border-color: #86b7fe; box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.15); }
+
+.tb-language { width: 200px; flex: 0 0 auto; }
+.tb-seed     { width: 240px; flex: 0 0 auto; }
+.tb-reviews  { width: 170px; flex: 0 0 auto; }
+
+.tb-seed .form-control { padding-right: 2.75rem; font-variant-numeric: tabular-nums; }
+
+.tb-icon-btn {
+  position: absolute;
+  top: 50%;
+  right: 0.5rem;
+  transform: translateY(-50%);
+  z-index: 5;
+  display: flex;
+  padding: 0.35rem;
+  border: 0;
+  background: transparent;
+  color: #212529;
+  border-radius: 0.4rem;
+}
+.tb-icon-btn:hover { background: #f1f3f5; }
+
+.tb-likes {
+  flex: 1 1 260px;
+  min-width: 200px;
+  max-width: 420px;
+  padding: 0.4rem 0.9rem 0;
+}
+
+.tb-likes-label {
+  display: flex;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  line-height: 1.2;
+  color: #6c757d;
+}
+.tb-likes-label output { color: #0d6efd; font-weight: 600; }
+
+.tb-likes .form-range { display: block; height: 1.5rem; padding: 0; }
+
+.tb-view .btn { height: 2.5rem; width: 2.75rem; display: flex; align-items: center; justify-content: center; }
+
+.movie .summary { cursor: pointer; }
+.movie .details { display: none; }
+.movie.expanded .details { display: table-row; }
+.movie .chevron { display: inline-block; transition: transform 0.15s; }
+.movie.expanded .chevron { transform: rotate(180deg); }
+.movie .description,
+.movie blockquote {
+  max-width: 100ch;
+}
+
+.trailer-frame {
+  aspect-ratio: 16 / 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  background: #111;
+  color: #fff;
+  font-weight: 700;
+  text-align: center;
+  border-radius: 0.25rem;
+}

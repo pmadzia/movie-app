@@ -1,4 +1,4 @@
-module API
+module Api
   class SeedsController < ApplicationController
     def random
       render json: { seed: Seed.random.to_s }
