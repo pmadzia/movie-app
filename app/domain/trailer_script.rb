@@ -3,6 +3,16 @@ class TrailerScript
   SCENES      = 2..3
   CAPTIONS    = %w[fade slide zoom tracking].freeze
   TRANSITIONS = %w[fade wipe slide iris].freeze
+  FILTERS = { hue: "hue-rotate(%ddeg)", gray: "grayscale(%.2f)" }.freeze
+  LOOKS = [
+    { hue: 0..0,      contrast: 1.1..1.3, saturate: 1.0..1.2, brightness: 0.85..1.0,  sepia: 0.0..0.1,  gray: 0.0..0.0 },  # natural
+    { hue: 170..200,  contrast: 1.1..1.4, saturate: 1.1..1.5, brightness: 0.75..0.95, sepia: 0.0..0.1,  gray: 0.0..0.0 },  # cold blue
+    { hue: -25..-10,  contrast: 1.1..1.3, saturate: 1.2..1.6, brightness: 0.85..1.05, sepia: 0.2..0.5,  gray: 0.0..0.0 },  # warm orange
+    { hue: 80..130,   contrast: 1.2..1.5, saturate: 0.6..1.0, brightness: 0.7..0.9,   sepia: 0.0..0.2,  gray: 0.0..0.2 },  # toxic green
+    { hue: 0..0,      contrast: 1.3..1.7, saturate: 0.0..0.0, brightness: 0.7..0.95,  sepia: 0.0..0.0,  gray: 1.0..1.0 },  # noir
+    { hue: 300..340,  contrast: 1.1..1.4, saturate: 1.2..1.8, brightness: 0.75..0.95, sepia: 0.0..0.2,  gray: 0.0..0.0 },  # magenta
+    { hue: -10..10,   contrast: 1.0..1.2, saturate: 0.3..0.6, brightness: 0.8..1.0,   sepia: 0.3..0.6,  gray: 0.0..0.2 }   # faded vintage
+  ].freeze
 
   def initialize(movie, profile, rng)
     @movie   = movie
@@ -29,9 +39,12 @@ class TrailerScript
   end
 
   def grade
-    "hue-rotate(#{@rng.int(-30..30)}deg) contrast(#{(1 + @rng.float * 0.3).round(2)}) " \
-      "saturate(#{(0.7 + @rng.float * 0.6).round(2)}) brightness(#{(0.75 + @rng.float * 0.2).round(2)}) " \
-      "sepia(#{(@rng.float * 0.4).round(2)})"
+    look = @look ||= @rng.pick(LOOKS)
+    look.map { |name, range| css(name, @rng.float * (range.end - range.begin) + range.begin) }.join(" ")
+  end
+
+  def css(name, value)
+    format(FILTERS.fetch(name, "#{name}(%.2f)"), value)
   end
 
   def captions
