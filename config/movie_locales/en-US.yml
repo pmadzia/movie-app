@@ -50,5 +50,5 @@ ratings: ["G", "PG", "PG-13", "R", "NC-17"]
 
 trailer:
   taglines: ["THIS FALL", "COMING SOON", "ONLY IN THEATERS", "THE WAIT IS OVER", "NOTHING WILL BE THE SAME"]
-  presented_by: ["A FILM BY", "DIRECTED BY", "FROM THE PRODUCERS OF"]
+  presented_by: ["A FILM BY", "DIRECTED BY"]
   rating_format: "RATED %{rating}"

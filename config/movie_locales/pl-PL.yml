@@ -54,5 +54,5 @@ ratings: ["BO", "7+", "12+", "16+", "18+"]
 
 trailer:
   taglines: ["JESIENIĄ W KINACH", "JUŻ WKRÓTCE", "TYLKO W KINACH", "KONIEC OCZEKIWANIA", "NIC JUŻ NIE BĘDZIE TAKIE SAMO"]
-  presented_by: ["FILM", "W REŻYSERII", "OD PRODUCENTÓW"]
+  presented_by: ["FILM", "W REŻYSERII"]
   rating_format: "Kategoria wiekowa %{rating}"
